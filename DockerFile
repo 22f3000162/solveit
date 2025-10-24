@@ -1,0 +1,24 @@
+# Use an official Node.js runtime with Playwright dependencies pre-installed
+FROM mcr.microsoft.com/playwright/node:v1.44.1-jammy
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json (or npm-shrinkwrap.json)
+COPY package*.json ./
+
+# Install project dependencies
+RUN npm install --omit=dev
+
+# Install Playwright browsers (specifically Chromium)
+# Use --with-deps to install OS dependencies needed by the browser
+RUN npx playwright install chromium --with-deps
+
+# Copy the rest of your application code into the container
+COPY . .
+
+# Expose the port your server listens on (defined in server.js)
+EXPOSE 3000
+
+# Command to run your application
+CMD ["node", "server.js"]

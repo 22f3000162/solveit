@@ -1,0 +1,24 @@
+{
+  "name": "fullstack-solver",
+  "version": "1.0.0",
+  "description": "Solver frontend and backend",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsdom": "^24.1.0",
+    "marked": "^13.0.2",
+    "node-fetch": "^3.3.2",
+    "playwright-chromium": "^1.56.1",
+    "prettier": "3.6.2",
+    "seedrandom": "^3.0.5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
